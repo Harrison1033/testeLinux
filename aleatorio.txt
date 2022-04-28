@@ -1,4 +1,4 @@
-//divinhar um número aleatório 
+//Adivinhar um número aleatório 
 
 
 package br.com.harrison.classe;

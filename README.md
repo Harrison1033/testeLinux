@@ -1,2 +1,0 @@
-# testeLinux
-repositórios via linux

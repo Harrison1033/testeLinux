@@ -1,5 +1,6 @@
-divinhar um número aleatório 
------------------------------------------------------------------------------------
+//divinhar um número aleatório 
+
+
 package br.com.harrison.classe;
 
 import java.util.Random;

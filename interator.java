@@ -9,8 +9,11 @@ public class TesteTres{
         Scanner scan = new Scanner(System.in);
         // vamos criar uma ArrayList
         ArrayList<String> pessoas = new ArrayList();
+		//vamos digitar o numero de interações
+        System.out.println("Digite o número de nomes a serem digitados: ");
+        int vez = scan.nextInt();
         //vamos digitar os nomes pelo número de interações
-        for (int i = 0; i < 4; i ++) {
+        for (int i = 0; i < vez; i ++) {
             System.out.println("Digite um nome: ");
             pessoas.add(scan.next());
         }
@@ -18,9 +21,9 @@ public class TesteTres{
         Iterator<String> pessoa = pessoas.iterator();
 
         // vamos obter o próximo elemento (neste caso, do primeiro ao quarto)
-        for (int i = 0; i < 4; i ++) {
+        for (int i = 0; i < vez; i ++) {
             String nome = pessoa.next();
-            System.out.println(nome);
+            System.out.println("Nome " + (i +1) + " : " + nome);
         }
     }
 }

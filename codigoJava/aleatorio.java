@@ -14,7 +14,7 @@ public class TesteTres {
     int conta;
 
     public void imprimir(){
-        num = numero.nextInt(10);
+        num = numero.nextInt(10);//no caso o número seria de 0 a 10
         System.out.println("Digite um número inteiro:");
         resp = scan.nextInt();
         while ((resp !=  num)){

@@ -13,7 +13,7 @@ public class FormaPagamento extends CalculaValores{
 
     public void fPagamento(){
         System.out.println("Qual a forma de pagamento? ");
-        System.out.println("(1) em espécie\n(2) cartão débito\n(3) no pix\n(4) cartão crédito");
+        System.out.println("(1) em espécie\n(2) cartão débito\n(3) cartão crédito");
         opcao = scan.nextInt();
         if (opcao == 1){
             especie.fPagamento();

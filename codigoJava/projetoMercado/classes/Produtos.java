@@ -3,7 +3,7 @@ package projetoMercado.classes;
 public class Produtos {
     protected String nome;
     protected int codigo;
-    protected double valor;
+    protected double valor = 0;
 
     public Produtos(String nome, int codigo, double valor) {
         this.nome = nome;

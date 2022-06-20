@@ -15,18 +15,24 @@ public class Principal {
         ClasseA3 classeA3 = new ClasseA3();
         ClasseA4 classeA4 = new ClasseA4();
         int opc;
-        System.out.println("Digite a operação desejada: \n(1) Soma\n(2) Subtração\n(3) Multiplicação\n(4) Divisão");
-        opc = scan.nextInt();
-        if (opc == 1){
-            classeA1.imprimir();
-        }else if (opc == 2){
-            classeA2.imprimir();
-        }else if (opc == 3){
-            classeA3.imprimir();
-        }else if (opc == 4){
-            classeA4.imprimir();
-        }else {
-            System.out.println("Opção inválida: ");
+        String opc2 = "s";
+
+        while ("s".equals(opc2)) {
+            System.out.println("Digite a operação desejada: \n(1) Soma\n(2) Subtração\n(3) Multiplicação\n(4) Divisão");
+            opc = scan.nextInt();
+            if (opc == 1) {
+                classeA1.imprimir();
+            } else if (opc == 2) {
+                classeA2.imprimir();
+            } else if (opc == 3) {
+                classeA3.imprimir();
+            } else if (opc == 4) {
+                classeA4.imprimir();
+            } else {
+                System.out.println("Opção inválida: ");
+            }
+            System.out.println("Gostaris de continuar? \n(s) Sim\n(n) Não");
+            opc2 = scan.next();
         }
     }
 }

@@ -1,16 +1,16 @@
 //Adivinhar um número aleatório 
 
-package br.com.harrison.classe;
+package bk.com.harrison.classes;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class TesteTres {
+public class ClasseA4 {
     Scanner scan = new Scanner(System.in);
     Random numero = new Random();
     int resp;
     int num;
-    int cont = 0;
+    int cont = 1;
     int conta;
 
     public void imprimir(){
@@ -24,9 +24,10 @@ public class TesteTres {
                 System.out.println("Errou, digite um número Menor: <");
             }
             resp = scan.nextInt();
-            conta = cont ++;
+            conta = ++ cont ;
         }
         System.out.println("Resposte correta Parabéns:");
-        System.out.println("Você acertou em " + (conta + 2) + " Tentativas:");
+        System.out.println("Você acertou em " + conta + " Tentativas:");
     }
 }
+

@@ -10,6 +10,7 @@ public class Cenario1 {
 	private Scene cena;
 	private Jogador jogador;
 	private Keyboard teclado;
+	private Zumbi zumbi;
 	
 	public Cenario1 (Window window) {
 		janela = window;
@@ -17,6 +18,8 @@ public class Cenario1 {
 		cena.loadFromFile(URL.scenario("Cenario1.scn"));
 		jogador = new Jogador(640, 350);
 		teclado = janela.getKeyboard();
+		zumbi = new Zumbi(300, 300);
+		
 		Som.play("cidade.wav");
 		run();
 	}
@@ -25,12 +28,18 @@ public class Cenario1 {
 			//cena.draw();
 			jogador.mover(janela,teclado);
 			jogador.caminho(cena);
+			zumbi.caminho(cena);
+			zumbi.perseguir(jogador.x, jogador.y);
+			cena.moveScene(jogador);//c‚mera segue o jogadeor  
 			
-			cena.moveScene(jogador);//c√¢mera segue o jogadeor  
 			jogador.x += cena.getXOffset();
 			jogador.y += cena.getXOffset();
 			
+			zumbi.x += cena.getXOffset();
+			zumbi.y += cena.getXOffset();
+			
 			jogador.draw();
+			zumbi.draw();
 			janela.update();
 		}
 	}

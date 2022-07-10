@@ -1,9 +1,12 @@
 package jogo;
 
+import javax.swing.event.MenuKeyEvent;
+
 //import java.util.Vector;
 //import java.awt.Point;
 //import jplay.GameObject;
 import jplay.Keyboard;
+import jplay.Scene;
 //import jplay.Scene;
 //import jplay.Sprite;
 //import jplay.TileInfo;
@@ -22,6 +25,14 @@ public class Jogador extends Ator {
 		
 		this.setTotalDuration(2000);
 	}
+	ControleTiros tiros = new ControleTiros();
+	public void atirar(Window janela, Scene cena, Keyboard teclado ) {
+		if ( teclado.keyDown(MenuKeyEvent.VK_A)) {
+			tiros.adicionaTiro(x +5, y + 8, direcao, cena);
+		}
+		tiros.run();
+	}
+	
 	public void mover(Window janela, Keyboard teclado) { 	
 		//acrescentei == true
 		if(teclado.keyDown(Keyboard.LEFT_KEY)==true) {

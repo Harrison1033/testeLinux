@@ -5,22 +5,22 @@ import jplay.Scene;
 import jplay.URL;
 import jplay.Window;
 
-public class Cenario1 extends Cenario {
+public class Cenario2 extends Cenario {
 	private Window janela;
 	private Scene cena;
 	private Jogador jogador;
 	private Keyboard teclado;
-	private Zumbi zumbi;
+	//private Zumbi zumbi;
 	
-	public Cenario1 (Window window) {
+	public Cenario2 (Window window) {
 		janela = window;
 		cena = new Scene();
-		cena.loadFromFile(URL.scenario("Cenario1.scn"));
-		jogador = new Jogador(640, 350);
+		cena.loadFromFile(URL.scenario("interno.scn"));
+		jogador = new Jogador(140, 150);
 		teclado = janela.getKeyboard();
-		zumbi = new Zumbi(300, 300);
+		//zumbi = new Zumbi(300, 300);
 		
-		Som.play("obscuro.wav");
+		Som.play("cidade.wav");
 		run();
 	}
 	public void run() {
@@ -28,7 +28,7 @@ public class Cenario1 extends Cenario {
 			//cena.draw();
 			jogador.mover(janela,teclado);
 			jogador.caminho(cena);
-			zumbi.caminho(cena);
+			//zumbi.caminho(cena);
 			//zumbi.perseguir(jogador.x, jogador.y);
 			cena.moveScene(jogador);//câmera segue o jogadeor  
 			
@@ -36,18 +36,18 @@ public class Cenario1 extends Cenario {
 			jogador.y += cena.getXOffset();
 			jogador.atirar(janela, cena, teclado);
 			
-			zumbi.x += cena.getXOffset();
-			zumbi.y += cena.getXOffset();
+			//zumbi.x += cena.getXOffset();
+			//zumbi.y += cena.getXOffset();
 			
 			jogador.draw();
-			zumbi.draw();
+			//zumbi.draw();
 			janela.update();
 			mudarCenario();
 		}
 	}
 	private void mudarCenario() {
-		if (tileCollision(05, jogador, cena)== true) {
-			new Cenario2(janela);
+		if (tileCollision(04, jogador, cena)== true) {
+			new Cenario1(janela);
 		}
 	}
 

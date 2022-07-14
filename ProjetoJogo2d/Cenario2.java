@@ -34,7 +34,7 @@ public class Cenario2 extends Cenario {
 			
 			jogador.x += cena.getXOffset();
 			jogador.y += cena.getXOffset();
-			jogador.atirar(janela, cena, teclado);
+			//jogador.atirar(janela, cena, teclado, zumbi);
 			
 			//zumbi.x += cena.getXOffset();
 			//zumbi.y += cena.getXOffset();

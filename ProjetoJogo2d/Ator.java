@@ -14,6 +14,7 @@ public class Ator extends Sprite {
 	double velocidade = 1;
 	 boolean movendo = false;
 	Controle controle = new Controle();
+	public double energia = 1000;
 	
 	public Ator(String fileName, int numFrames) {
 		super(fileName, numFrames);

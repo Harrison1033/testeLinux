@@ -5,7 +5,7 @@ import jplay.URL;
 public class Zumbi extends Ator {
 
 	public Zumbi(int x, int y) {
-		super(URL.sprite("Zumbi 00.png"), 16);//o 16 Ã© o nÃºmero de frames
+		super(URL.sprite("Zumbi 00.png"), 16);//o 16 é o número de frames
 		this.x = x;
 		this.y = y;
 		this.setTotalDuration(2000);
@@ -49,7 +49,15 @@ public class Zumbi extends Ator {
 			movendo = false;
 		}
 	}
-	
+	public void morrer() {
+		if(this.energia <= 0) {
+			this.velocidade = 0;
+			//this.ataque = 0;
+			this.direcao = 0;
+			this.movendo = false;
+			this.x = 10_000;
+		}
+	}
 	
 
 }

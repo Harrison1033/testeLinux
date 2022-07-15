@@ -1,7 +1,5 @@
 package jogo;
 
-import javax.swing.JOptionPane;
-
 import jplay.GameImage;
 import jplay.Keyboard;
 import jplay.URL;
@@ -22,7 +20,5 @@ public class Main {
 				new Cenario1(janela);
 			}
 		}
-
 	}
-
 }

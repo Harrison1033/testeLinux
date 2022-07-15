@@ -1,7 +1,6 @@
 package jogo;
 
 import java.util.LinkedList;
-
 import jplay.Scene;
 import jplay.Sound;
 import jplay.URL;
@@ -28,5 +27,4 @@ public class ControleTiros {
 	private void somDisparo() {
 		new Sound(URL.audio("tiro.wav")).play();
 	}
-
 }

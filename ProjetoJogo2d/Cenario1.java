@@ -18,14 +18,14 @@ public class Cenario1 extends Cenario {
 		cena.loadFromFile(URL.scenario("Cenario1.scn"));
 		jogador = new Jogador(220, 225);
 		teclado = janela.getKeyboard();
-		zumbi = new Zumbi[5];
+		zumbi = new Zumbi[5];//array de 5 zumbis no cenário
 		
 		Som.play("obscuro.wav");
 		run();
 	}
 	public void run() {
 		 for(int i = 0; i < zumbi.length; i ++) {
-			 zumbi[i] = new Zumbi(100 * i, 100 * i);
+			 zumbi[i] = new Zumbi(300 * i, 200 * i);
 		 }
 		while (true) {
 			//cena.draw();

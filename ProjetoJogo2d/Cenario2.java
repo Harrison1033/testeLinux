@@ -16,7 +16,7 @@ public class Cenario2 extends Cenario {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile(URL.scenario("interno.scn"));
-		jogador = new Jogador(140, 150);
+		jogador = new Jogador(40, 500);
 		teclado = janela.getKeyboard();
 		//zumbi = new Zumbi(300, 300);
 		
@@ -40,6 +40,7 @@ public class Cenario2 extends Cenario {
 			//zumbi.y += cena.getXOffset();
 			
 			jogador.draw();
+			jogador.energia(janela);
 			//zumbi.draw();
 			janela.update();
 			mudarCenario();

@@ -1,38 +1,28 @@
 package jogo;
 
 import javax.swing.event.MenuKeyEvent;
-
-//import java.util.Vector;
-//import java.awt.Point;
-//import jplay.GameObject;
+import java.awt.*;
 import jplay.Keyboard;
 import jplay.Scene;
-//import jplay.Scene;
-//import jplay.Sprite;
-//import jplay.TileInfo;
-import jplay.URL;
+import jplay.URL;	
 import jplay.Window;
 
 public class Jogador extends Ator {
-	
 	 //acrescentei a linha de baixo
-	 static double energia = 100;
-	 
+	 static int energia = 3000;
 	public Jogador(int x, int y) {
-		super(URL.sprite("jogador.png"), 20);
+		super(URL.sprite("jogador.png"), 20);//distância de um sprite do outro
 		this.x = x;
 		this.y = y;
-		
 		this.setTotalDuration(2000);
 	}
 	ControleTiros tiros = new ControleTiros();
 	public void atirar(Window janela, Scene cena, Keyboard teclado, Ator inimigo ) {
 		if ( teclado.keyDown(MenuKeyEvent.VK_A)) {
-			tiros.adicionaTiro(x +5, y + 8, direcao, cena);
+			tiros.adicionaTiro(x + 5, y + 8, direcao, cena);
 		}
 		tiros.run(inimigo);
 	}
-	
 	public void mover(Window janela, Keyboard teclado) { 	
 		//acrescentei == true
 		if(teclado.keyDown(Keyboard.LEFT_KEY)==true) {
@@ -63,14 +53,22 @@ public class Jogador extends Ator {
 				setSequence(0, 4);
 				direcao = 5;
 			}movendo = true;
-
 		}
 		if (movendo) {
 			update();//vc atualiza ...
 			movendo = false;//... e para
 		}
-		
 	}
-	
-	
+	 Font f = new Font("arial", Font.BOLD, 30);//import java.awt.*;
+	 public void energia(Window janela) {
+		 if (Jogador.energia >= 500) {//muda a cor do life abaixo de 500
+		 janela.drawText("HP:   " + Jogador.energia, 30, 30, Color.GREEN, f);
+		 }
+		 else if (Jogador.energia < 500 && Jogador.energia >= 100) {
+			 janela.drawText("HP:   " + Jogador.energia, 30, 30, Color.BLUE, f);
+		 }
+		 else {
+			 janela.drawText("HP:   " + Jogador.energia, 30, 30, Color.RED, f);
+		 }
+	 }
 }

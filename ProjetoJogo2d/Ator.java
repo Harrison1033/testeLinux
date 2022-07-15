@@ -2,14 +2,12 @@ package jogo;
 
 import java.awt.Point;
 import java.util.Vector;
-
 import jplay.GameObject;
 import jplay.Scene;
 import jplay.Sprite;
 import jplay.TileInfo;
 
 public class Ator extends Sprite {
-	
 	protected int direcao = 3;
 	double velocidade = 1;
 	 boolean movendo = false;
@@ -18,9 +16,7 @@ public class Ator extends Sprite {
 	
 	public Ator(String fileName, int numFrames) {
 		super(fileName, numFrames);
-		// TODO Auto-generated constructor stub
 	}
-	
 	//controle do que não se pode atravessar
 		public void caminho(Scene cena) {
 			Point min = new Point((int)this.x, (int)this.y);
@@ -49,9 +45,7 @@ public class Ator extends Sprite {
 				   }
 				}
 			}
-			
 		}
-		
 		private boolean colisaoVertical(GameObject obj, GameObject obj2) {
 			if(obj2.x + obj2.width <= obj.x)
 				return false;
@@ -65,8 +59,5 @@ public class Ator extends Sprite {
 			if (obj.y + obj.height <= obj2.y)
 				return false;
 			return true;
-
 		}
-
-
 }

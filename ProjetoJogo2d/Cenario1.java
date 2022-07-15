@@ -10,46 +10,49 @@ public class Cenario1 extends Cenario {
 	private Scene cena;
 	private Jogador jogador;
 	private Keyboard teclado;
-	private Zumbi zumbi;
+	private Zumbi zumbi[];
 	
 	public Cenario1 (Window window) {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile(URL.scenario("Cenario1.scn"));
-		jogador = new Jogador(640, 350);
+		jogador = new Jogador(220, 225);
 		teclado = janela.getKeyboard();
-		zumbi = new Zumbi(300, 300);
+		zumbi = new Zumbi[5];
 		
 		Som.play("obscuro.wav");
 		run();
 	}
 	public void run() {
+		 for(int i = 0; i < zumbi.length; i ++) {
+			 zumbi[i] = new Zumbi(100 * i, 100 * i);
+		 }
 		while (true) {
 			//cena.draw();
+			mudarCenario();
+			janela.update();
 			jogador.mover(janela,teclado);
 			jogador.caminho(cena);
-			zumbi.caminho(cena);
-			//zumbi.perseguir(jogador.x, jogador.y);
 			cena.moveScene(jogador);//câmera segue o jogadeor  
-			
 			jogador.x += cena.getXOffset();
 			jogador.y += cena.getXOffset();
-			jogador.atirar(janela, cena, teclado,zumbi);
-			zumbi.morrer();
-			
-			zumbi.x += cena.getXOffset();
-			zumbi.y += cena.getXOffset();
-			
+			for(int i = 0; i < zumbi.length; i ++) {
+			zumbi[i].caminho(cena);
+			zumbi[i].perseguir(jogador.x, jogador.y);
+			jogador.atirar(janela, cena, teclado,zumbi[i]);
+			zumbi[i].morrer();
+			zumbi[i].ataque(jogador);
+			zumbi[i].x += cena.getXOffset();
+			zumbi[i].y += cena.getXOffset();
+			zumbi[i].draw();
+			}
 			jogador.draw();
-			zumbi.draw();
-			janela.update();
-			mudarCenario();
+			jogador.energia(janela);//referente ao life do jogador
 		}
 	}
 	private void mudarCenario() {
-		if (tileCollision(05, jogador, cena)== true) {
-			new Cenario2(janela);
+		if (tileCollision(05, jogador, cena)== true) {//05 é o número do tile que colide para outro cenário
+			new Cenario2(janela);//Abre a janela do cenario 2
 		}
 	}
-
 }

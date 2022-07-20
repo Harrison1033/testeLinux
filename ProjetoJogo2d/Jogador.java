@@ -9,12 +9,12 @@ import jplay.Window;
 
 public class Jogador extends Ator {
 	 //acrescentei a linha de baixo
-	 static int energia = 3000;
-	public Jogador(int x, int y) {
-		super(URL.sprite("jogador.png"), 20);//distância de um sprite do outro
-		this.x = x;
+	 static int energia = 3000;//energia do personagem
+	public Jogador(int x, int y) {//localização do personagem
+		super(URL.sprite("jogador.png"), 20);//(20)número de frames do personagem
+		this.x = x;//adicionando a posição do personagem passada pelo construtor
 		this.y = y;
-		this.setTotalDuration(2000);
+		this.setTotalDuration(2000);//tempo de troca de frames em milisegundos
 	}
 	ControleTiros tiros = new ControleTiros();
 	public void atirar(Window janela, Scene cena, Keyboard teclado, Ator inimigo ) {
@@ -26,28 +26,28 @@ public class Jogador extends Ator {
 	public void mover(Window janela, Keyboard teclado) { 	
 		//acrescentei == true
 		if(teclado.keyDown(Keyboard.LEFT_KEY)==true) {
-			if(this.x > 0)
+			if(this.x > 0)//se X for maior que 0, então personagem pode se mover para esquerda
 				this.x -= velocidade;
 			if(direcao != 1) {
-				setSequence(4, 8);
+				setSequence(4, 8);//sequencia de sprites do personagem a esquerda
 				direcao = 1;
-			}movendo = true;
+			}movendo = true;//enquanto apertar esquerda ele fica true
 		}else if(teclado.keyDown(Keyboard.RIGHT_KEY)) {
-			if(this.x < janela.getWidth() - 60)
-				this.x += velocidade;
+			if(this.x < janela.getWidth() - 60)//para a direita x<que a largura da janela -60 é a margem de segurança
+				this.x += velocidade;//- para esquerda e + para a direita
 			if(direcao != 2) {
 				setSequence(8, 12);
 				direcao = 2;
-			}movendo = true;
+			}movendo = true;//enquanto apertar direita, ele fica true
 		}else if(teclado.keyDown(Keyboard.UP_KEY)) {
-			if(this.y > 0)
+			if(this.y > 0)//para cima é o eixo y
 				this.y -= velocidade;
 			if(direcao != 4) {
 				setSequence(12, 16);
 				direcao = 4;
 			}movendo = true;
 		}else if(teclado.keyDown(Keyboard.DOWN_KEY)==true) {
-			if(this.y < janela.getHeight() - 60)
+			if(this.y < janela.getHeight() - 60)//y - a altura da janela com -60 de margem
 				this.y += velocidade;
 			if(direcao != 5) {
 				setSequence(0, 4);
@@ -55,7 +55,7 @@ public class Jogador extends Ator {
 			}movendo = true;
 		}
 		if (movendo) {
-			update();//vc atualiza ...
+			update();//vc atualiza ...e faz a troca das imagens
 			movendo = false;//... e para
 		}
 	}

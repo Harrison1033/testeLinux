@@ -31,7 +31,7 @@ public class Cenario1 extends Cenario {
 			//cena.draw();
 			mudarCenario();
 			janela.update();
-			jogador.mover(janela,teclado);
+			jogador.mover(janela,teclado);//mover jogador no cenario através do mover da classe Jogador
 			jogador.caminho(cena);
 			cena.moveScene(jogador);//câmera segue o jogadeor  
 			jogador.x += cena.getXOffset();
@@ -46,7 +46,7 @@ public class Cenario1 extends Cenario {
 			zumbi[i].y += cena.getXOffset();
 			zumbi[i].draw();
 			}
-			jogador.draw();
+			jogador.draw();//pintando o jogador
 			jogador.energia(janela);//referente ao life do jogador
 		}
 	}

@@ -9,7 +9,7 @@ public class Cenario1 extends Cenario {
 	private Window janela;//criar classe janela
 	private Scene cena;//criar a classe cena 
 	private Jogador jogador;
-	private Keyboard teclado;
+	private Keyboard teclado;//implementa o teclado no cenario
 	private Zumbi zumbi[];
 	
 	public Cenario1 (Window window) {//construtor com o parâmetro Window da classe main
@@ -17,7 +17,7 @@ public class Cenario1 extends Cenario {
 		cena = new Scene();
 		cena.loadFromFile(URL.scenario("Cenario1.scn"));//carrega o arquivo de cenário1
 		jogador = new Jogador(230, 225);//TENTAR UM IF PARA RETORNO DE MULTIPLAS TELAS
-		teclado = janela.getKeyboard();
+		teclado = janela.getKeyboard();//parte do Keyboard teclado
 		zumbi = new Zumbi[5];//array de 5 zumbis no cenário
 		
 		//Som.play("obscuro.wav");
@@ -34,8 +34,8 @@ public class Cenario1 extends Cenario {
 			jogador.mover(janela,teclado);//mover jogador no cenario através do mover da classe Jogador
 			jogador.caminho(cena);
 			cena.moveScene(jogador);//câmera segue o jogadeor  
-			jogador.x += cena.getXOffset();
-			jogador.y += cena.getXOffset();
+			jogador.x += cena.getXOffset();//adicionando o posicionamento para seguir mais suavemente
+			jogador.y += cena.getYOffset();//adicionando o posicionamento
 			for(int i = 0; i < zumbi.length; i ++) {
 			zumbi[i].caminho(cena);
 			zumbi[i].perseguir(jogador.x, jogador.y);

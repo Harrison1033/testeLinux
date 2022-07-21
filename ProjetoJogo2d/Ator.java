@@ -9,7 +9,7 @@ import jplay.TileInfo;
 
 public class Ator extends Sprite {
 	protected int direcao = 3;
-	double velocidade = 1;
+	double velocidade = 1;//abaixo disso estava dando bug
 	 boolean movendo = false;
 	Controle controle = new Controle();
 	public double energia = 1000;
@@ -19,20 +19,20 @@ public class Ator extends Sprite {
 	}
 	//controle do que não se pode atravessar
 		public void caminho(Scene cena) {
-			Point min = new Point((int)this.x, (int)this.y);
+			Point min = new Point((int)this.x, (int)this.y);//definir o tamanho do personagem
 			Point max = new Point((int)this.x + this.width, (int)this.y + this.height);
 			
 			Vector<?>tiles = cena.getTilesFromPosition(min, max);
 			
-			for (int i = 0; i < tiles.size(); i++) {
-				TileInfo tile = (TileInfo) tiles.elementAt(i);
+			for (int i = 0; i < tiles.size(); i++) {//for para interar todos os tiles
+				TileInfo tile = (TileInfo) tiles.elementAt(i);//no caso o (TileInfo) é um cast
 				
 				if(controle.Colisao(this, tile)== true) {
 				   if(colisaoVertical(this, tile)) {	
-					if(tile.y + tile.height - 2 < this.y){
-						this.y = tile.y + tile.height;
+					if(tile.y + tile.height - 2 < this.y){//o -2 é a margem de segurança
+						this.y = tile.y + tile.height;//verifica obatáculo que tiver acima do pesonagem
 					}
-					else if(tile.y > this.y + this.height -2) {
+					else if(tile.y > this.y + this.height -2) {//verifica obstáculo que tiver abaixo do personagem
 						this.y = tile.y - this.height;
 					}
 					}

@@ -5,23 +5,23 @@ import jplay.Scene;
 import jplay.URL;
 import jplay.Window;
 
-public class Cenario1 extends Cenario {
-	private Window janela;//criar classe janela
-	private Scene cena;//criar a classe cena 
+public class Cenario3 extends Cenario {
+	private Window janela;
+	private Scene cena;
 	private Jogador jogador;
-	private Keyboard teclado;//implementa o teclado no cenario
+	private Keyboard teclado;
 	private Zumbi zumbi[];
 	
-	public Cenario1 (Window window) {//construtor com o parâmetro Window da classe main
+	public Cenario3 (Window window) {
 		janela = window;
 		cena = new Scene();
-		cena.loadFromFile(URL.scenario("Cenario1.scn"));//carrega o arquivo de cenário1
-		jogador = new Jogador(230, 225);//TENTAR UM IF PARA RETORNO DE MULTIPLAS TELAS
-		teclado = janela.getKeyboard();//parte do Keyboard teclado
+		cena.loadFromFile(URL.scenario("Cenario3.scn"));
+		jogador = new Jogador(35, 460);
+		teclado = janela.getKeyboard();
 		zumbi = new Zumbi[5];//array de 5 zumbis no cenário
 		
 		//Som.play("obscuro.wav");
-		run();//o método run contém o loop infinito como na classe main
+		run();
 	}
 	public void run() {
 		 for(int i = 0; i < zumbi.length; i ++) {
@@ -31,11 +31,11 @@ public class Cenario1 extends Cenario {
 			//cena.draw();
 			mudarCenario();
 			janela.update();
-			jogador.mover(janela,teclado);//mover jogador no cenario através do mover da classe Jogador
+			jogador.mover(janela,teclado);
 			jogador.caminho(cena);
 			cena.moveScene(jogador);//câmera segue o jogadeor  
-			jogador.x += cena.getXOffset();//adicionando o posicionamento para seguir mais suavemente
-			jogador.y += cena.getYOffset();//adicionando o posicionamento
+			jogador.x += cena.getXOffset();
+			jogador.y += cena.getYOffset();
 			for(int i = 0; i < zumbi.length; i ++) {
 			zumbi[i].caminho(cena);
 			zumbi[i].perseguir(jogador.x, jogador.y);
@@ -46,17 +46,13 @@ public class Cenario1 extends Cenario {
 			zumbi[i].y += cena.getYOffset();
 			zumbi[i].draw();
 			}
-			jogador.draw();//pintando o jogador
+			jogador.draw();
 			jogador.energia(janela);//referente ao life do jogador
 		}
 	}
 	private void mudarCenario() {
 		if (tileCollision(05, jogador, cena)== true) {//05 é o número do tile que colide para outro cenário
-			new Cenario2(janela);//Abre a janela do cenario 2
+			new Cenario1(janela);//Abre a janela do cenario 1
 		}
-	
-	if (tileCollision(06, jogador, cena)== true) {//05 é o número do tile que colide para outro cenário
-		new Cenario3(janela);//Abre a janela do cenario 2
 	}
-}
 }

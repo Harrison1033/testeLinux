@@ -16,7 +16,7 @@ public class Cenario3 extends Cenario {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile(URL.scenario("Cenario3.scn"));
-		jogador = new Jogador(35, 460);
+		jogador = new Jogador(35, 680);
 		teclado = janela.getKeyboard();
 		zumbi = new Zumbi[5];//array de 5 zumbis no cenário
 		
@@ -56,3 +56,4 @@ public class Cenario3 extends Cenario {
 		}
 	}
 }
+

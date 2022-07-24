@@ -16,7 +16,7 @@ public class Cenario1 extends Cenario {
 		janela = window;
 		cena = new Scene();
 		cena.loadFromFile(URL.scenario("Cenario1.scn"));//carrega o arquivo de cenário1
-		jogador = new Jogador(230, 225);//TENTAR UM IF PARA RETORNO DE MULTIPLAS TELAS
+		jogador = new Jogador(270, 530);//TENTAR UM IF PARA RETORNO DE MULTIPLAS TELAS
 		teclado = janela.getKeyboard();//parte do Keyboard teclado
 		zumbi = new Zumbi[5];//array de 5 zumbis no cenário
 		

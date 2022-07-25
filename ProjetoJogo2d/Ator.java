@@ -9,7 +9,7 @@ import jplay.TileInfo;
 
 public class Ator extends Sprite {
 	protected int direcao = 3;
-	double velocidade = 1.0;//abaixo disso estava dando bug
+	double velocidade = 1;//abaixo disso estava dando bug
 	 boolean movendo = false;
 	Controle controle = new Controle();
 	public double energia = 1000;

@@ -1,0 +1,82 @@
+60
+src/recursos/tiles/asfalto.png
+src/recursos/tiles/calcada.png
+src/recursos/tiles/grama1.png
+src/recursos/tiles/calcada_vertical.png
+src/recursos/tiles/porta1.png
+06
+07
+08
+09
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+src/recursos/tiles/arvoreS1.png
+src/recursos/tiles/arvoreS2.png
+23
+src/recursos/tiles/muro_baixo.png
+25
+src/recursos/tiles/parede2.png
+27
+src/recursos/tiles/quadro2a.png
+src/recursos/tiles/quadro2b.png
+30
+src/recursos/tiles/bancada.png
+32
+src/recursos/tiles/darmario1.png
+src/recursos/tiles/darmario2.png
+src/recursos/tiles/darmario3.png
+src/recursos/tiles/darmario4.png
+37
+src/recursos/tiles/aarmario1a.png
+src/recursos/tiles/aarmario2a.png
+src/recursos/tiles/aarmario3a.png
+src/recursos/tiles/aarmario4a.png
+42
+src/recursos/tiles/bancadaAA1.png
+src/recursos/tiles/bancadaAA2.png
+src/recursos/tiles/bancadaAB1.png
+src/recursos/tiles/bancadaAB2.png
+src/recursos/tiles/bancadaBA1.png
+src/recursos/tiles/bancadaBA2.png
+src/recursos/tiles/bancadaBB1.png
+src/recursos/tiles/bancadaBB2.png
+51
+src/recursos/tiles/barmario1b.png
+src/recursos/tiles/barmario2b.png
+src/recursos/tiles/barmario3b.png
+src/recursos/tiles/barmario4b.png
+src/recursos/tiles/quadro3a.png
+src/recursos/tiles/quadro3b.png
+src/recursos/tiles/quadro4a.png
+src/recursos/tiles/quadro4b.png
+60
+26 52 54 26 26 26 26 52 54 33 35 28 29 38 40 26 26 56 57 26 26 58 59 26 26  
+26 53 55 43 44 47 48 53 55 34 36 31 31 39 41 43 44 45 46 47 48 49 50 31 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 33 35 01 01 01 01 01 01 01 01 43 44 45 46 47 48 49 50 31 26 
+26 01 01 01 01 34 36 45 46 01 01 01 01 01 01 43 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 43 44 47 48 45 46 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 01 26 
+26 26 26 26 26 26 26 26 26 26 05 05 26 26 26 26 26 26 26 26 26 26 26 26 26
+%
+src/recursos/cenarios/IMAGEM DE FUNDO.png

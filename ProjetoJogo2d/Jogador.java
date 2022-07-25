@@ -59,7 +59,7 @@ public class Jogador extends Ator {
 			movendo = false;//... e para
 		}
 	}
-	 Font f = new Font("arial", Font.BOLD, 30);//import java.awt.*;
+	 Font f = new Font("arial", Font.BOLD, 15);//import java.awt.*;
 	 public void energia(Window janela) {
 		 if (Jogador.energia >= 500) {//muda a cor do life abaixo de 500
 		 janela.drawText("HP:   " + Jogador.energia, 30, 30, Color.GREEN, f);

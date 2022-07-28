@@ -17,14 +17,14 @@ public class Zumbi extends Ator {
 			moveTo(x, y, velocidade);
 			if(direcao != 1) {
 				setSequence(5, 8);
-				direcao = 1;
+				direcao = 1;//direção que o zumbi está se dirigindo
 			}
 			movendo = true;
 		}
 		else if (this.x < x && this.y <= y +50 && this.y >= y - 50) {
 			moveTo(x, y, velocidade);
 			if(direcao != 2) {
-				setSequence(9, 12);
+				setSequence(9, 12);//frames referente a direção que o zumbi tem que estar
 				direcao = 2;
 			}
 			movendo = true;

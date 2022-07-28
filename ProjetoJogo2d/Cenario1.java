@@ -10,7 +10,7 @@ public class Cenario1 extends Cenario {
 	private Scene cena;//criar a classe cena 
 	private Jogador jogador;
 	private Keyboard teclado;//implementa o teclado no cenario
-	private Zumbi zumbi[];
+	private Zumbi zumbi[];//por serem multiplos zumbis, tem que ser um array
 	
 	public Cenario1 (Window window) {//construtor com o parâmetro Window da classe main
 		janela = window;
@@ -42,8 +42,8 @@ public class Cenario1 extends Cenario {
 			jogador.atirar(janela, cena, teclado,zumbi[i]);
 			zumbi[i].morrer();
 			zumbi[i].ataque(jogador);
-			zumbi[i].x += cena.getXOffset();
-			zumbi[i].y += cena.getYOffset();
+			zumbi[i].x += cena.getXOffset();//usado para o zumbi não ser arrastado quando o jogador andar na tela
+			zumbi[i].y += cena.getYOffset();//o mesmo de cima
 			zumbi[i].draw();
 			}
 			jogador.draw();//pintando o jogador

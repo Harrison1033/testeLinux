@@ -4,14 +4,14 @@ import jplay.Sprite;
 import jplay.URL;
 
 public class Tiro extends Sprite {
-	public static final int LEFT = 1, RIGHT = 2, STOP = 3, UP = 4, DOWN = 5;
+	public static final int LEFT = 1, RIGHT = 2, STOP = 3, UP = 4, DOWN = 5;//direções do disparo
 	
 	protected static final int VELOCIDADE_TIRO = 20;
 	protected int caminho = STOP;
-	protected boolean movendo = false;
-	protected int direcao = 3;
+	protected boolean movendo = false;//verifica se está se movendo
+	protected int direcao = 3;//direção inicial
 
-	public Tiro(double x, double y, int caminho) {
+	public Tiro(double x, double y, int caminho) {//construtor
 		super(URL.sprite("tiro.png" ), 16);
 		this.caminho = caminho;
 		this.x = x;

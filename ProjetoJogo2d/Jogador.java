@@ -17,9 +17,9 @@ public class Jogador extends Ator {
 		this.setTotalDuration(2000);//tempo de troca de frames em milisegundos
 	}
 	ControleTiros tiros = new ControleTiros();
-	public void atirar(Window janela, Scene cena, Keyboard teclado, Ator inimigo ) {
+	public void atirar(Window janela, Scene cena, Keyboard teclado, Ator inimigo) {
 		if ( teclado.keyDown(MenuKeyEvent.VK_A)) {
-			tiros.adicionaTiro(x + 5, y + 8, direcao, cena);
+			tiros.adicionaTiro(x + 5, y + 8, direcao, cena);//o 5 e o 8 são as posições de onde as balas estão saindo do personagem
 		}
 		tiros.run(inimigo);
 	}

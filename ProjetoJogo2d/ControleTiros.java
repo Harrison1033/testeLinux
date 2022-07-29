@@ -14,7 +14,7 @@ public class ControleTiros {
 		somDisparo();
 	}
 	public void run(Ator inimigo) {
-		for (int i = 0; i < tiros.size(); i++) {
+		for (int i = 0; i < tiros.size(); i++) {//as estruturas de dados são percorridas com o size e não length
 			Tiro tiro = tiros.removeFirst();
 			tiro.mover();
 			tiros.addLast(tiro);
